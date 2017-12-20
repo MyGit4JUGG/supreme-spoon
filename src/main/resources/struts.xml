@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+/*
+ * 这是Struts2的配置文件
+ */
+-->
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="main"
+		namespace="/main"
+		extends="struts-default">
+		<!-- Action : /main/index -->
+		<action 
+			name="index" 
+			class="indexAction">
+			<result name="success">
+				/WEB-INF/jsp/index.jsp
+			</result>			
+		</action>
+		
+		<!-- Action ： /main/registerForm -->
+		<action name="registerForm"
+			class="registerFormAction">
+			<result name="success">
+				/WEB-INF/jsp/registerForm.jsp
+			</result>
+		</action>
+		
+		<!-- Action ： /main/register -->
+		<action name="register"
+			class="registerAction">
+			<result name="success" type="redirect">
+				/main/index
+			</result>
+			<result name="error">
+				/WEB-INF/jsp/error.jsp
+			</result>
+		</action>
+		
+		<!-- Action ： /main/loginForm -->
+		<action name="loginForm"
+			class="loginFormAction">
+			<result name="success">
+				/WEB-INF/jsp/loginForm.jsp
+			</result>
+		</action>
+	</package>
+
+</struts>

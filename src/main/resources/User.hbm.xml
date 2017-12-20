@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<!-- 配置Java类与数据表的映射 -->
+	<!-- name：Java类 -->
+	<!-- table：数据表 -->
+	<class name="cn.tedu.ssh.bean.User"
+		table="user">
+		<!-- 配置主键使用<id>节点 -->
+		<!-- name：Java类中的属性名 -->
+		<!-- column：数据表中的字段名 -->
+		<!-- type：数据表中的字段数据类型 -->
+		<id name="id" column="id" type="int">
+			<generator class="identity"></generator>
+		</id>
+		<!-- 其它字段的配置 -->
+		<!-- name：Java类中的属性名 -->
+		<!-- column：数据表中的字段名 -->
+		<!-- type：数据表中的字段数据类型 -->
+		<property name="username" column="username" type="string"></property>
+		<property name="password" column="password" type="string"></property>
+		<property name="mobilePhoneNumber" column="mobile_phone_number" type="string"></property>
+		<property name="email" column="email" type="string"></property>
+	</class>
+</hibernate-mapping>
